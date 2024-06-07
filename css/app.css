@@ -1,0 +1,386 @@
+/* aag-harita app css  */
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+}
+
+#map {
+  min-height: 500px;
+  height: 100%;
+  width:100%;
+}
+
+#login_layer {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 400;
+    position: fixed;
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
+#logo {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    height: auto;
+    width: 22%;
+    z-index: 401;
+}
+#logo img {
+    width: 100%;
+}
+
+#filter_box .yangin {
+    background-image: url("../images/yangin_filter.png");
+}
+#filter_box .risk {
+    background-image: url("../images/risk_filter.png");
+}
+#filter_box .kaynak {
+    background-image: url("../images/kaynak_filter.png");
+}
+#filter_box .eylem {
+    background-image: url("../images/eylem_filter.png");
+}
+#filter_box .yangin.selected, #filter_box .yangin:hover {
+    background-image: url("../images/yangin_filter_hover.png");
+}
+#filter_box .risk.selected, #filter_box .risk:hover {
+    background-image: url("../images/risk_filter_hover.png");
+}
+#filter_box .kaynak.selected, #filter_box .kaynak:hover {
+    background-image: url("../images/kaynak_filter_hover.png");
+}
+#filter_box .eylem.selected, #filter_box .eylem:hover {
+    background-image: url("../images/eylem_filter_hover.png");
+}
+
+#tool_box .import {
+    background-image: url("../images/import.png");
+}
+#tool_box .export {
+    background-image: url("../images/export.png");
+}
+#tool_box .import:hover {
+    background-image: url("../images/import_hover.png");
+}
+#tool_box .export:hover {
+    background-image: url("../images/export_hover.png");
+}
+
+#tool_box {
+    position: absolute;
+    width: auto;
+    right: 25px;
+    top: 25px;
+    padding: 12px 12px 12px 12px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 18px 18px 18px 18px;
+    z-index: 401;
+}
+
+#tool_box div {
+    width: 70px;
+    margin: 2px;
+    height: 30px;
+    cursor: pointer;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+}
+
+#tool_box div:hover {
+    opacity: 1.0;
+}
+
+#tool_box .info {
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/info.png");
+}
+
+#zoom_box {
+    position: absolute;
+    width: auto;
+    right: 25px;
+    bottom: 25px;
+    padding: 12px 12px 12px 12px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 18px 18px 18px 18px;
+    z-index: 401;
+}
+
+#zoom_box div {
+    width: 30px;
+    margin: 2px;
+    height: 30px;
+    cursor: pointer;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+}
+
+#zoom_box div:hover {
+    opacity: 1.0;
+}
+
+#zoom_box .minus {
+    background-image: url("../images/minus.png");
+}
+#zoom_box .plus {
+    background-image: url("../images/plus.png");
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    color: white;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+}
+
+.leaflet-popup-content .popup-header, .leaflet-popup-tip .popup-header {
+    width: calc(100%-12px);
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px 10px 0px 0px;
+    font-size: 16px;
+    padding: 12px;
+    min-width: 250px;
+}
+
+.leaflet-popup-content .row {
+    padding: 12px;
+}
+.leaflet-popup-content .row div {
+    padding: 4px;
+    width: auto;
+}
+
+.leaflet-popup-content img, .leaflet-popup-tip img {
+    height: auto;
+    border-radius: 10px;
+}
+
+.popup-content {
+    display: flex;
+    padding: 15px;
+}
+
+.photo-wrapper {
+    width: 245px;
+}
+.photo-wrapper img {
+    width: 88%;
+}
+.text-wrapper {
+    width: 100%;
+}
+.text-wrapper > .location_link {
+    margin: -12px -5px -5px 0;
+    text-align: right;
+}
+.text-wrapper > .location_link > a {
+    vertical-align: top;
+    line-height: 19px;
+    padding: 4px;
+}
+.datetime {
+    margin-top: -3px;
+    display: flex;
+}
+.datetime > div {
+    padding: 4px;
+    /* margin-left: 10px; */
+}
+.date {
+    margin-left: auto;
+}
+
+.phone {
+    font-size: 14px;
+    margin-left: 30px;
+    float: right;
+}
+
+@media screen and (max-width: 768px) {
+    #logo {
+        top: 15px;
+        left: 10px;
+        width: 55%;
+    }
+
+    #login_box {
+        width: 72%;
+        height: auto;
+        position: absolute;
+        top: 15%;
+        left: 14%;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: rgba(100,100,100,0.7) 2px 2px 3px;
+        text-align: center;
+    }
+    
+    #login_box > * {
+        width: 75%;
+        padding: 6px;
+    }
+    #login_message {
+        margin: 20px 20px 10px 20px;
+        padding: 6px
+    }
+    #username {
+        margin: 5px 20px 10px 20px;
+        padding: 6px;
+    }
+    #password {
+        margin: 5px 20px 10px 20px;
+        padding: 6px;
+    }
+    #giris {
+        margin: 5px 20px 20px 20px;
+        width: 40%;
+    }
+
+    #filter_box {
+        position: absolute;
+        width: auto;
+        left: 10px;
+        bottom: 15px;
+        padding: 8px 8px 4px 8px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 18px 18px 0px 0px;
+        z-index: 401;
+    }
+
+    #filter_box div {
+        width: 45px;
+        margin: 2.1px;
+        height: 47px;
+        cursor: pointer;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #tool_box {
+        position: absolute;
+        width: auto;
+        right: 10px;
+        top: 15px;
+        padding: 7px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 16px;
+        z-index: 401;
+    }
+    
+    #tool_box div {
+        width:58px;
+        margin: 1px;
+        height: 26px;
+        cursor: pointer;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.8;
+    }
+
+    #tool_box .info {
+        width: 25px;
+        height: 25px;
+        background-image: url("../images/info.png");
+    }
+
+    #zoom_box {
+        position: absolute;
+        width: auto;
+        right: 10px;
+        bottom: 15px;
+        padding: 8px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 16px;
+        z-index: 401;
+    }
+    
+    #zoom_box div {
+        width: 30px;
+        margin: 2px;
+        height: 30px;
+        cursor: pointer;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #login_box {
+        width: 26%;
+        height: auto;
+        position: absolute;
+        top: 15%;
+        left: 37%;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: rgba(100,100,100,0.7) 2px 2px 3px;
+        text-align: center;
+    }
+    
+    #login_box > * {
+        width: 88%;
+        padding: 6px;
+    }
+    #login_message {
+        margin: 20px 20px 10px 20px;
+        padding: 6px
+    }
+    #username {
+        margin: 5px 20px 10px 20px;
+        padding: 6px;
+    }
+    #password {
+        margin: 5px 20px 10px 20px;
+        padding: 6px;
+    }
+    #giris {
+        margin: 5px 20px 20px 20px;
+        width: 40%;
+    }
+
+    #filter_box {
+        position: absolute;
+        width: auto;
+        left: 25px;
+        bottom: 25px;
+        padding: 12px 12px 6px 12px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 18px 18px 0px 0px;
+        z-index: 401;
+    }
+
+    #filter_box div {
+        width: 61px;
+        margin: 3.1px;
+        height: 63px;
+        cursor: pointer;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+    
